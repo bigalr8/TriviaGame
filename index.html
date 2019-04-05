@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript Trivia Game</title>
+
+    <!-- TO DO: add "reset.css"-->
+</head>
+    <script type="text/javascript" src="assets/javascript/app.js">
+    </script>
+
+<body>
+  <!--
+    Pseudo code;
+    1. Build initial set of questions
+      1.1 Create array or object with initil questions from full set
+
+    2. Initiate play via "Play" event
+      2.1 Set "Play" page
+      2.2 Get any play start event 
+      
+      2.3 Set timer
+      2.4 Set initial questions page with "Done" button
+      2.5 Get any user "done" event
+          2.5.1 Check for completed answers and stop if complete
+                otherwise alert that answers are not complete
+
+      2.6 decriment timer and get answers
+          2.6.1 Check for completed answers and stop if complete
+          2.6.2 check time and stop if out of time
+
+      2.7 Stop 
+          2.7.1 Stop timer
+          2.7.2 Report results
+          
+
+
+  -->
+  <!--TO DO: Display Play page -->
+  <!--<button id="start">Play</button>-->
+
+  <h1 id="banner">PHILLY PHANATIC PHUN PHACTS QUIZ</h1>
+  <div id="quizContainer">
+
+
+
+      <!-- Choices will Get Placed Here -->
+      <div id="choices-div"></div>
+  </div>
+
+
+  <!--- Javascript
+-->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+  //--TO DO: Test for click on start, display questions, display timer and start countdown
+  //on click event call "play" function
+  
+  //$("#start").on("click",play);
+//Play function
+//TO DO:
+
+  //--TO DO: test for time up or questions answered -->
+  //--TO DO: validate answers and display results and option to replay-->
+  
+
+    // The array of questions for our quiz game.
+    var questions = [
+        {
+            q: "Why is the Phila. NHL team named the 'Flyers?'", a: "Sounded good to owners wife",
+            c: ["Sounded good to owners wife", "Owner was Airman in WWII", "Owner was licensed pilot"]
+        },
+
+        {
+            q: "What are the Phila. Eagles NFL team named after?'", a: "Eagle in poster for part of FDR's 'New Deal'",
+            c: ["Statue in famous Phila. dept. store", "Heads side on game coin-toss coin", "Eagle in poster for part of FDR's 'New Deal'"]
+        },
+
+        {
+            q: "What did the owner of the Phillies MLB team attempt to rename them?'", a: "The Blue Jays",
+            c: ["The Lightning", "The Liberty", "The Independents", "The Blue Jays", "The Speed Boys"]
+        },
+
+        {
+            q: "Who were the Phila. 76er'NBA team originally founded as?", a: "Syracuse Nationals",
+            c: ["Syracuse Nationals", "Philadelphia Warriors", "Rochester Royals"]
+        },
+
+
+    ];
+
+    for (i = 0; i < questions.length; i++) {
+        var choices = questions[i].c;
+        //Creating Quiz question
+        var quizQuestion = $("<p>").text(questions[i].q);
+        var formInput = quizQuestion;
+
+        // Creating a form to hold the question choices 
+        var form = $("<form class='quiz'>");
+        formInput.append(form);
+
+
+
+
+
+        for (j = 0; j < choices.length; j++) {
+            var answer = choices[j];
+
+            // Creating a span display the choice
+            var inputSpan = $("<span>").text("          " + answer);
+
+            // Appending span
+            formInput.append(inputSpan);
+
+            // Creating radio button for choice
+            var inputButton = $("<input>").attr({ "type": "radio", "name": "choice", "value": answer })
+
+            // Appending radio button
+            formInput.append(inputButton);
+
+            // Putting the entire set of chquimovie above the previous movies
+            $("#choices-div").prepend(formInput);
+
+
+        }
+    };
+
+
+</script>    
+
+        
+
+
+        </script>
+
+</body>
+
+
+
+
+
+
+
+</html>
